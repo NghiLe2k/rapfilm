@@ -11,7 +11,10 @@ export default class Movie extends Component {
             <img src={movie.hinhAnh} />
           </div>
           <div className="details">
-            <p>{movie.tenPhim}</p>
+            <div className="tenFilm">
+              <p>{movie.tenPhim}</p>
+            </div>
+
             <Link className="btn btn-success" to={`/detail/${movie.maPhim}`}>
               chi tiet film
             </Link>

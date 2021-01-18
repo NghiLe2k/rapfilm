@@ -1,5 +1,5 @@
 import DangChieu from "../containers/HomeTemplate/DangChieu";
-import ChiTietMovie from "../containers/HomeTemplate/ChiTietMovie";
+import DetailPage from "./../containers/HomeTemplate/DetailPage";
 export const routesHome = [
   {
     exact: true,
@@ -9,7 +9,7 @@ export const routesHome = [
   {
     exact: false,
     path: "/detail/:id",
-    component: ChiTietMovie,
+    component: DetailPage,
   },
 ];
 export const routesAdmin = [];

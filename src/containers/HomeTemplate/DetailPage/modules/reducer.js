@@ -1,34 +1,37 @@
 import {
-  DETAIL_MOVIE_SUCCESS,
-  DETAIL_MOVIE_FAILED,
-  DETAIL_MOVIE_REQUEST,
-} from "./constains";
+  DETAIL_PAGE_REQUEST,
+  DETAIL_PAGE_SUCCESS,
+  DETAIL_PAGE_FAILED,
+} from "./constain";
+
 let initialState = {
   loading: false,
   data: null,
   err: null,
 };
-const detailMovieReducer = (state = initialState, action) => {
+
+const detailPageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case DETAIL_MOVIE_REQUEST:
+    case DETAIL_PAGE_REQUEST:
       state.loading = true;
       state.data = null;
       state.err = null;
-
       return { ...state };
-    case DETAIL_MOVIE_SUCCESS:
+
+    case DETAIL_PAGE_SUCCESS:
       state.loading = false;
       state.data = action.payload;
       state.err = null;
-
       return { ...state };
-    case DETAIL_MOVIE_FAILED:
+
+    case DETAIL_PAGE_FAILED:
       state.loading = false;
       state.data = null;
       state.err = action.payload;
       return { ...state };
     default:
-      break;
+      return { ...state };
   }
 };
-export default detailMovieReducer;
+
+export default detailPageReducer;
